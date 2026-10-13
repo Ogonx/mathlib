@@ -9,3 +9,7 @@ struct Vec3 {
 inline Vec3 add(Vec3 a, Vec3 b) {
 	return {a.x + b.x, a.y + b.y, a.z + b.z};
 }
+
+inline Vec3 subtract(Vec3 a, Vec3 b) {
+	return { a.x - b.x, a.y - b.y, a.z - b.z };
+}
