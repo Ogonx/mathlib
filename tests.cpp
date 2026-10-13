@@ -146,3 +146,21 @@ TEST_CASE("normalise", "[vec3]") {
 	REQUIRE(len2 == Catch::Approx(1.0f).margin(0.001f));
 }
 
+
+TEST_CASE("cross", "[vec3]") {
+
+	Vec3 a = { 1.0f, 0.0f, 0.0f };
+	Vec3 b = { 0.0f, 1.0f, 0.0f };
+	Vec3 cross1 = cross(a,b);
+	REQUIRE(cross1.x == 0.0f);
+	REQUIRE(cross1.y == 0.0f);
+	REQUIRE(cross1.z == 1.0f);
+
+	Vec3 c = { 0.0f, 1.0f, 0.0f };
+	Vec3 d = { 1.0f, 0.0f, 0.0f };
+	Vec3 cross2 = cross(c, d);
+	REQUIRE(cross2.x == 0.0f);
+	REQUIRE(cross2.y == 0.0f);
+	REQUIRE(cross2.z == -1.0f);
+
+}
