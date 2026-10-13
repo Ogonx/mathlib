@@ -21,3 +21,7 @@ inline Vec3 multiply(Vec3 v, Vec3 s) {
 inline Vec3 scale(Vec3 v, float s) {
 	return { v.x * s,v.y * s,v.z * s };
 }
+
+inline float dot(Vec3 a, Vec3 b) {
+	return a.x * b.x + a.y * b.y + a.z * b.z;
+}

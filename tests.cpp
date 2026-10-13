@@ -69,7 +69,7 @@ TEST_CASE("multiply", "[vec3]") {
 
 TEST_CASE("Scale", "[vec3]") {
 
-	//test 2// 
+	//test 1// 
 	Vec3 c{ 1.0f,2.0f,3.0f };
 	float d{ 2.0f };
 	Vec3 times = scale(c, d);
@@ -84,4 +84,26 @@ TEST_CASE("Scale", "[vec3]") {
 	REQUIRE(times2.x == 0.0f);
 	REQUIRE(times2.y == 0.0f);
 	REQUIRE(times2.z == 0.0f);
+}
+
+TEST_CASE("Dot", "[vec3]") {
+
+	//test 1// 
+	Vec3 a{ 1.0f,2.0f,3.0f };
+	Vec3 b{ 2.0f,3.0f, 4.0f};
+	float product = dot(a, b);
+	REQUIRE(product == 20.0f);
+	
+
+	//test 2// 
+	Vec3 c{ 1.0f,2.0f,3.0f };
+	Vec3 d{ 4.0f,5.0f,6.0f };
+	float product2 = dot(c, d);
+	REQUIRE(product2 == 32.0f);
+
+	//test3//
+	Vec3 e{ 2.0f,0.0f,1.0f };
+	Vec3 f{ 1.0f,3.0f,1.0f };
+	float product3 = dot(e, f);
+	REQUIRE(product3 == 3.0f);
 }
