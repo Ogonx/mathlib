@@ -47,3 +47,41 @@ TEST_CASE("subtract", "[vec3]") {
 	REQUIRE(diff2.z == -3.0f);
 }
 
+TEST_CASE("multiply", "[vec3]") {
+
+	//test 1// 
+	Vec3 a{ 2.0f,0.0f,1.0f };
+	Vec3 b{ 1.0f,3.0f,1.0f };
+	Vec3 times = multiply(a, b);
+	REQUIRE(times.x == 2.0f);
+	REQUIRE(times.y == 0.0f);
+	REQUIRE(times.z == 1.0f);
+
+	//test 2// 
+	Vec3 c{ 1.0f,2.0f,3.0f };
+	Vec3 d{ 4.0f,5.0f,6.0f};
+	Vec3 times2 = multiply(c, d);
+	REQUIRE(times2.x == 4.0f);
+	REQUIRE(times2.y == 10.0f);
+	REQUIRE(times2.z == 18.0f);
+
+}
+
+TEST_CASE("Scale", "[vec3]") {
+
+	//test 2// 
+	Vec3 c{ 1.0f,2.0f,3.0f };
+	float d{ 2.0f };
+	Vec3 times = scale(c, d);
+	REQUIRE(times.x == 2.0f);
+	REQUIRE(times.y == 4.0f);
+	REQUIRE(times.z == 6.0f);
+
+	//test 2// 
+	Vec3 v{ 1.0f,2.0f,3.0f };
+	float s{ 0.0f };
+	Vec3 times2 = scale(v, s);
+	REQUIRE(times2.x == 0.0f);
+	REQUIRE(times2.y == 0.0f);
+	REQUIRE(times2.z == 0.0f);
+}
