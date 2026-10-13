@@ -1,5 +1,6 @@
 #include <catch2/catch_test_macros.hpp>
 #include "Vec3.h"
+#include <catch2/catch_approx.hpp>
 
 TEST_CASE("Vec3 stores its values", "[vec3]"){
 	Vec3 v{1.0f,2.0f,3.0f};
@@ -106,4 +107,21 @@ TEST_CASE("Dot", "[vec3]") {
 	Vec3 f{ 1.0f,3.0f,1.0f };
 	float product3 = dot(e, f);
 	REQUIRE(product3 == 3.0f);
+}
+
+TEST_CASE("length", "[vec3]") {
+
+	Vec3 a = { 2.0f, 5.0f, 2.0f };
+	float len = length(a);
+	REQUIRE(len == Catch::Approx(5.7446f).margin(0.001f));
+
+
+	Vec3 b = { 3.0f, 4.0f, 0.0f };
+	float len2 = length(b);
+	REQUIRE(len2 == 5.0f);
+
+	Vec3 c = { 0.0f, 0.0f, 0.0f };
+	float len3 = length(c);
+	REQUIRE(len3 == 0.0f);
+
 }

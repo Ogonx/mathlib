@@ -1,4 +1,5 @@
 #pragma once
+#include <cmath>
 
 struct Vec3 {
 	float x;
@@ -24,4 +25,8 @@ inline Vec3 scale(Vec3 v, float s) {
 
 inline float dot(Vec3 a, Vec3 b) {
 	return a.x * b.x + a.y * b.y + a.z * b.z;
+}
+
+inline float length(Vec3 a) {
+	return std::sqrt(dot(a, a));
 }
