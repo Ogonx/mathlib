@@ -30,3 +30,7 @@ inline float dot(Vec3 a, Vec3 b) {
 inline float length(Vec3 a) {
 	return std::sqrt(dot(a, a));
 }
+
+inline Vec3 normalise(Vec3 a) {
+	return scale(a, 1.0f / length(a));
+}

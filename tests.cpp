@@ -125,3 +125,24 @@ TEST_CASE("length", "[vec3]") {
 	REQUIRE(len3 == 0.0f);
 
 }
+
+TEST_CASE("normalise", "[vec3]") {
+
+	Vec3 a = { 3.0f, 4.0f, 0.0f };
+	Vec3 norm = normalise(a);
+	REQUIRE(norm.x == Catch::Approx(0.6f).margin(0.001f));
+	REQUIRE(norm.y == Catch::Approx(0.8f).margin(0.001f));
+	REQUIRE(norm.z == 0.0f);
+	float len = length(norm);
+	REQUIRE(len == Catch::Approx(1.0f).margin(0.001f));
+
+
+	Vec3 b = { 5.0f, 2.0f, 2.0f };
+	Vec3 norm2 = normalise(b);
+	REQUIRE(norm2.x == Catch::Approx(0.8704f).margin(0.001f));
+	REQUIRE(norm2.y == Catch::Approx(0.3482f).margin(0.001f));
+	REQUIRE(norm2.z == Catch::Approx(0.3482f).margin(0.001f));
+	float len2 = length(norm2);
+	REQUIRE(len2 == Catch::Approx(1.0f).margin(0.001f));
+}
+
